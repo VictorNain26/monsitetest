@@ -1,0 +1,153 @@
+#tchatbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: black;
+
+  #linkaccueil {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+  }
+
+  #linkvideo {
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    font-size: 12px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+  }
+
+  input {
+    background-color: black;
+    padding: 5px;
+  }
+
+  #conteneurMain {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #config {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border: white solid 2px;
+    padding: 5px;
+    overflow-y: auto;
+  }
+
+  #displayPseudo {
+
+    margin-top: 30px;
+  }
+
+  .conteneurPseudo {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  #userName {
+    margin-left: 5px;
+  }
+
+  #users {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  #chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 500px;
+    height: 300px;
+    border: white solid 2px;
+    padding: 5px 20px;
+  }
+
+  #inputMessage {
+    margin-top: 10px;
+  }
+
+  #start {
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #userCam {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+  }
+
+  #userCamStart {
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #userCamStop {
+    display: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #myVideo {
+    border: whitesmoke 3px solid;
+    width: 250px;
+    height: 190px;
+  }
+
+  #stop {
+    display: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #chatbox {
+    overflow-y: auto;
+  }
+
+  #chatbox>div {
+    padding: 5px;
+    word-break: normal;
+    border-top: solid whitesmoke 0.5px;
+  }
+
+
+  .userVideo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gridVideo {
+    width: 350px;
+    height: 100%;
+    margin: 5px;
+  }
+
+  #videogrid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 80%;
+    margin: 10px;
+  }
+}

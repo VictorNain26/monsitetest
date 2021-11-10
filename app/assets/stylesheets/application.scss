@@ -1,13 +1,45 @@
-// Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
-
-// External libraries
-@import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 // Your CSS partials
-@import "components/index";
 @import "pages/index";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: whitesmoke;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a {
+  color: orangered;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-size: 13px;
+  margin: 5px;
+}
+
+h2 {
+  color: aqua;
+}
+
+.disnone {
+  display: none;
+}
+
+.pointer {
+  cursor: pointer;
+}

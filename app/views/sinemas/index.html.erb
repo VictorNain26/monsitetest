@@ -1,0 +1,59 @@
+<div id="sinema">
+  <header>
+    <h1>Si Nema</h1>
+    <%= link_to root_path, id: 'linkaccueil' do %>
+      <h2>Accueil</h2>
+    <% end %>
+    <%= link_to tchatboxs_path, id: 'linktchat' do %>
+      <h2>(T)chatBox</h2>
+    <% end %>
+  </header>
+  <div id="mainconteneur">
+    <div id="asidevideo">
+      <div id="videogrid">
+        <h2>Films et Series</h2>
+      </div>
+      <div id="containeuraddsupp">
+        <div id="addsupp">
+          <div>
+            <p id="add" class="pointer">Ajouter</p>
+          </div>
+          <div>
+            <p id="supp" class="pointer">Supprimer</p>
+          </div>
+        </div>
+        <div id="addcontaineur" class="nodisplay">
+          <form name="formulaire">
+            <label for="film">Film</label>
+            <input type="radio" id="film" name="choose" value="film">
+            <label for="serie">Serie</label>
+            <input type="radio" id="serie" name="choose" value="serie">
+          </form>
+          <div>
+            <label for="title">Titre: </label>
+            <input type="text" name="title" id="title" required>
+          </div>
+          <div>
+            <label for="url">URL: </label>
+            <input type="text" name="url" id="url" required>
+          </div>
+          <div>
+            <button id="createButton">Envoyer!</button>
+          </div>
+        </div>
+        <div id="suppcontaineur" class="nodisplay">
+          <div>
+            <label for="supptitle">Titre: </label>
+            <input type="text" name="supptitle" id="supptitle" required>
+          </div>
+          <div>
+            <button id="suppButton">Envoyer!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="videolauncher">
+      <video id="video" controls autoplay muted></video>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div id="tchatbox">
+  <header>
+    <h1>(T)ChatBox</h1>
+    <%= link_to root_path, id: 'linkaccueil' do %>
+      <h2>Accueil</h2>
+    <% end %>
+    <%= link_to sinemas_path, id: 'linkvideo' do %>
+      <h2>Si Nema</h2>
+    <% end %>
+  </header>
+  <div id="userCam">
+    <div id="myVideo"></div>
+    <p id="userCamStart">Allumer son retour</p>
+    <p id="userCamStop">Eteindre son retour </p>
+  </div>
+  <div id="conteneurMain">
+    <div id="config">
+      <h2>Configuration</h2>
+      <div class="conteneurPseudo">
+        <label for="userName">Prénom:</label>
+        <input id="userName" placeholder="UserName"/>
+      </div>
+      <p id="displayPseudo">Rentre ton Prénom !</p>
+      <p id="users">Il y a <span id="displayUsers"></span> personne(s) connecté(e)(s)</p>
+      <p id="start">Entrer dans la conversation</p>
+      <p id="stop">Quitter la conversation</p>
+    </div>
+    <div id="chat">
+      <div id="chatbox"></div>
+      <input type="text" required id="inputMessage" placeholder="Message"/>
+    </div>
+  </div>
+  <div id="videogrid"></div>
+</div>

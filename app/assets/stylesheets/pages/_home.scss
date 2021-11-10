@@ -1,1 +1,37 @@
-// Specific CSS for your home-page
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: black;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  #home-container-liens {
+    display: flex;
+    flex-direction: column;
+    border: 1.5px green solid;
+    width: 80%;
+    height: 80%;
+
+    h2 {
+      color: aqua;
+      text-align: center;
+      margin: 10px;
+    }
+
+    .liens {
+      margin: 20px 0px 0px 20px;
+    }
+  }
+
+}
