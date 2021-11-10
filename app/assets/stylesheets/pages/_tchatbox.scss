@@ -5,19 +5,26 @@
   height: 100%;
   background-color: black;
 
-  #linkaccueil {
+  #link-accueil {
     position: absolute;
     top: 5px;
     right: 5px;
     font-size: 12px;
   }
 
-  #linkvideo {
+  #link-video {
     position: absolute;
     top: 30px;
     right: 5px;
     font-size: 12px;
   }
+
+    #link-connexion {
+      position: absolute;
+      top: 55px;
+      right: 5px;
+      font-size: 12px;
+    }
 
   header {
     display: flex;
