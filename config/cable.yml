@@ -8,4 +8,4 @@ test:
 production:
   adapter: redis
   url: redistogo-symmetrical-01463
-  channel_prefix: monsitetest_production
+  # channel_prefix: monsitetest_production
