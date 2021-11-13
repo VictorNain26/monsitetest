@@ -4,7 +4,7 @@ import consumer from '../../channels/consumer';
 const sendMessage = async (e) => {
   const message = e.target.value
   e.preventDefault()
-  await fetch('http://localhost:3000/tchatboxs', {
+  await fetch(window.location.href + '/tchatboxs', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
