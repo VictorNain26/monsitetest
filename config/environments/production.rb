@@ -39,7 +39,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain.
-  config.action_cable.mount_path = '/tchatboxs'
+  config.action_cable.mount_path = /tchatboxs
   config.action_cable.url = 'wss://monsitetest.herokuapp.com/tchatboxs'
   config.action_cable.allowed_request_origins = ['https://monsitetest.herokuapp.com', /http:\/\/monsitetest.herokuapp.com/]
 
