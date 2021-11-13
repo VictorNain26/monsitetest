@@ -7,5 +7,5 @@ test:
 
 production:
   adapter: redis
-  url: redistogo-symmetrical-01463
+  url: <%= ENV.fetch("REDIS_URL") { "redistogo-symmetrical-01463" } %>
   # channel_prefix: monsitetest_production
