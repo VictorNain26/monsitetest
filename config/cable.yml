@@ -7,5 +7,5 @@ test:
 
 production:
   adapter: redis
-  url: redistogo-symmetrical-01463
+  url: redis://redistogo:2815773a48013961d196a62002f60165@soapfish.redistogo.com:11756/
   # channel_prefix: monsitetest_production
