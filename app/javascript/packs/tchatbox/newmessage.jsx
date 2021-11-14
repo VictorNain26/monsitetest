@@ -5,7 +5,6 @@ import consumer from '../../channels/consumer';
 export const NewMessage = () => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
-  const chatbox = document.querySelector('#chatbox')
 
   const sendMessage = async (message) => {
     await fetch(window.location.href, {
@@ -20,9 +19,11 @@ export const NewMessage = () => {
   }
 
   useEffect(() => {
+    const chatbox = document.querySelector('#chatbox');
     consumer.subscriptions.create('MessageChannel', {
 
       connected() {
+        chatbox.scrollTop = chatbox.scrollHeight;
         console.log('connected')
       },
 
@@ -32,6 +33,7 @@ export const NewMessage = () => {
 
       received(data) {
         setMessages(data.messages);
+        chatbox.scrollTop = chatbox.scrollHeight;
       },
     })
   }, [])
