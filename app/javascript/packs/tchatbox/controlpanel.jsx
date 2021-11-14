@@ -7,17 +7,17 @@ export const ControlPanel = () => {
   let i = 1;
 
   useEffect(() => {
-    consumer.subscriptions.create('MessageChannel', {
+    consumer.subscriptions.create('ControlPannelChannel', {
 
       connected() {
         console.log('connected')
       },
 
       disconnected() {
-
       },
 
       received(data) {
+        console.log(data.users)
         setUsers(data.users)
         if (i <= 1) {
           setUser(data.user)
