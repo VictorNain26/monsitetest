@@ -2,7 +2,6 @@ class TchatboxsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @messages = Message.all.map { |message| message }
   end
 
   def create
