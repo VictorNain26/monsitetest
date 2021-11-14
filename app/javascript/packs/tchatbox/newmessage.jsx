@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import consumer from '../../channels/consumer';
 
-const sendMessage = async (message) => {
-  await fetch(window.location.href, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-CSRF-TOKEN': document.querySelector('[name=csrf-token]').content,
-    },
-    body: JSON.stringify({ message }),
-  })
-}
 
 export const NewMessage = () => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
+  const chatbox = document.querySelector('#chatbox')
 
-
+  const sendMessage = async (message) => {
+    await fetch(window.location.href, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-TOKEN': document.querySelector('[name=csrf-token]').content,
+      },
+      body: JSON.stringify({ message }),
+    })
+    setMessage('');
+  }
 
   useEffect(() => {
     consumer.subscriptions.create('MessageChannel', {
@@ -30,7 +31,7 @@ export const NewMessage = () => {
       },
 
       received(data) {
-        setMessages(data.messages)
+        setMessages(data.messages);
       },
     })
   }, [])
@@ -45,7 +46,7 @@ export const NewMessage = () => {
             ))
           }
         </div>
-        <input onChange={(e) => setMessage(e.target.value)} onKeyDown={(e) => e.key === 'Enter' ? sendMessage(message) : null } type="text" required id="inputMessage" placeholder="Message" />
+        <input value={message} onChange={(e) => setMessage(e.target.value)} onKeyDown={(e) => e.key === 'Enter' ? sendMessage(message) : null } type="text" required id="inputMessage" placeholder="Message" />
         <button onClick={() => sendMessage(message)}>Envoyer</button>
       </div>
     </>
