@@ -7,5 +7,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:d4e74e50336b915f27d127fd39ab43c3@soapfish.redistogo.com:11756/
+  url: redis://:pd0d707db9a4364683901fa721bda0463b5e0297357951598843f034967fda836@ec2-34-241-130-143.eu-west-1.compute.amazonaws.com:7569
   # channel_prefix: monsitetest_production
