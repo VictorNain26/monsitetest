@@ -3,6 +3,7 @@ import consumer from '../../channels/consumer';
 
 const sendMessage = async (e) => {
   const message = e.target.value
+  e.target.value = '';
   e.preventDefault()
   await fetch(window.location.href, {
     method: 'POST',
@@ -12,7 +13,6 @@ const sendMessage = async (e) => {
     },
     body: JSON.stringify({ message }),
   })
-  e.target.value = '';
 }
 
 export const NewMessage = () => {
