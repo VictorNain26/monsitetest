@@ -17,7 +17,6 @@ const sendMessage = async (e) => {
 
 export const NewMessage = () => {
   const [messages, setMessages] = useState([]);
-  console.log(messages);
 
   useEffect(() => {
     consumer.subscriptions.create('MessageChannel', {
@@ -38,14 +37,16 @@ export const NewMessage = () => {
 
   return (
     <>
-      <div className='messages' id="chatbox">
-        {
-          messages.map((message) => (
-            <div key={message.id}>{message.content}</div>
-          ))
-        }
+      <div id="chat">
+        <div className='messages' id="chatbox">
+          {
+            messages.map((message) => (
+              <div key={message.id}>[{message.time}] | {message.username}: '{message.content}'</div>
+            ))
+          }
+        </div>
+        <input onKeyDown={(e) => e.key === 'Enter' ? sendMessage(e) : null } type="text" required id="inputMessage" placeholder="Message" />
       </div>
-      <input onKeyDown={(e) => e.key === 'Enter' ? sendMessage(e) : null } type="text" required id="inputMessage" placeholder="Message" />
     </>
   );
 
