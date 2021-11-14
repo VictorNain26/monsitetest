@@ -10,6 +10,6 @@ class TchatboxsController < ApplicationController
     message.username = current_user.username
     message.time = Time.now.strftime('%H:%M')
     message.save
-    ActionCable.server.broadcast('messages', { messages: Message.all })
+    ActionCable.server.broadcast('messages', { messages: Message.all, users: Redis.new.pubsub("channels", "action_cable/*").length, user: current_user.username.capitalize })
   end
 end

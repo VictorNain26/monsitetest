@@ -17,7 +17,6 @@ export const ControlPanel = () => {
       },
 
       received(data) {
-        console.log(data)
         setUsers(data.users)
         setUser(data.user)
       },
@@ -28,12 +27,8 @@ export const ControlPanel = () => {
     <>
       <div id="config">
         <h2>Panneau de contrôle</h2>
-        <div class="conteneurPseudo">
-        </div>
         <p id="displayPseudo">Salut {user} !</p>
-        <p id="users">Il y a <span id="displayUsers">{users}</span> personne(s) connecté(e)(s)</p>
-        <p id="start">Entrer dans la conversation</p>
-        <p id="stop">Quitter la conversation</p>
+        <p id="users">Il y a <span id="displayUsers">{users}</span> personne{users > 1 ? 's' : ''} connecté{users > 1 ? 's' : ''}</p>
       </div>
     </>
   )}

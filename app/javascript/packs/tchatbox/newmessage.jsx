@@ -37,7 +37,7 @@ export const NewMessage = () => {
 
   return (
     <>
-      <div id="chat">
+      <div id='chat'>
         <div className='messages' id="chatbox">
           {
             messages.map((message) => (
@@ -49,6 +49,4 @@ export const NewMessage = () => {
       </div>
     </>
   );
-
-
 }
