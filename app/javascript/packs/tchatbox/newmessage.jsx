@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import consumer from '../../channels/consumer';
 
-const sendMessage = async (e) => {
-  const message = e.target.value
-  e.target.value = '';
-  e.preventDefault()
+const sendMessage = async (message) => {
   await fetch(window.location.href, {
     method: 'POST',
     headers: {
@@ -17,6 +14,9 @@ const sendMessage = async (e) => {
 
 export const NewMessage = () => {
   const [messages, setMessages] = useState([]);
+  const [message, setMessage] = useState('');
+
+
 
   useEffect(() => {
     consumer.subscriptions.create('MessageChannel', {
@@ -45,7 +45,8 @@ export const NewMessage = () => {
             ))
           }
         </div>
-        <input onKeyDown={(e) => e.key === 'Enter' ? sendMessage(e) : null } type="text" required id="inputMessage" placeholder="Message" />
+        <input onChange={(e) => setMessage(e.target.value)} onKeyDown={(e) => e.key === 'Enter' ? sendMessage(message) : null } type="text" required id="inputMessage" placeholder="Message" />
+        <button onClick={() => sendMessage(message)}>Envoyer</button>
       </div>
     </>
   );

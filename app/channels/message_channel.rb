@@ -5,6 +5,6 @@ class MessageChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    ActionCable.server.broadcast('messages', { users: Redis.new.pubsub("channels", "action_cable/*").length })
+    ActionCable.server.broadcast('messages', { messages: Message.all, users: Redis.new.pubsub("channels", "action_cable/*").length, user: current_user.username.capitalize })
   end
 end
