@@ -40,7 +40,7 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = '/tchatboxs'
-  config.action_cable.url = 'wss://monsitetest.herokuapp.com/tchatboxs'
+  config.action_cable.url = 'wss://redistogo-symmetrical-01463/tchatboxs'
   config.action_cable.allowed_request_origins = ['https://monsitetest.herokuapp.com', /http:\/\/monsitetest.herokuapp.com/]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
