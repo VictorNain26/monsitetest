@@ -28,7 +28,7 @@ export const NewMessage = () => {
       },
 
       disconnected() {
-
+        console.log('bye bye')
       },
 
       received(data) {
