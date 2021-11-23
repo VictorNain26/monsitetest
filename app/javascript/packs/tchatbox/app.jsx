@@ -1,12 +1,12 @@
-import React from 'react'
-import { NewMessage } from './newmessage'
-import { ControlPanel } from './controlpanel'
+import React from 'react';
+import { NewMessage } from './newmessage';
+import { ControlPanel } from './controlpanel';
 
 export const App = () => {
   return (
-    <>
-      <ControlPanel />
-      <NewMessage />
-    </>
-  )
+      <div id="container-main">
+        <ControlPanel />
+        <NewMessage />
+      </div>
+  );
 }

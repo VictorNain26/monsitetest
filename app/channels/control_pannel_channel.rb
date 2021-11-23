@@ -1,10 +1,11 @@
 class ControlPannelChannel < ApplicationCable::Channel
   def subscribed
     stream_from "users"
-    ActionCable.server.broadcast('users', { users: Redis.new.pubsub("channels", "action_cable/*").length, user: current_user.username.capitalize })
+    ActionCable.server.remote_connections.where(current_user: User.find(current_user.id))
+    ActionCable.server.broadcast('users', { users: ActionCable.server.connections.length })
   end
 
   def unsubscribed
-    ActionCable.server.broadcast('users', { users: (Redis.new.pubsub("channels", "action_cable/*").length) - 1 })
+    ActionCable.server.broadcast('users', { users: ActionCable.server.connections.length })
   end
 end

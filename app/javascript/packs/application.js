@@ -3,9 +3,13 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+// eslint-disable-next-line no-undef
 require("@rails/ujs").start()
+// eslint-disable-next-line no-undef
 require("turbolinks").start()
+// eslint-disable-next-line no-undef
 require("@rails/activestorage").start()
+// eslint-disable-next-line no-undef
 require("channels")
 
 
@@ -16,17 +20,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
-// -------------------------     ---------------------------
-// Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
-// WRITE YOUR OWN JS STARTING FROM HERE 👇
-// ----------------------------------------------------
-
-// External imports
-import { home } from './home/index';
 import { tchatbox } from './tchatbox/index';
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   if (document.querySelector('#tchatbox')) {

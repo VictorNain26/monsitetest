@@ -1,4 +1,4 @@
-<div id="tchatbox">
+<div id="tchatbox" data-user='<%= current_user.username %>'>
   <header>
     <h1>(T)ChatBox</h1>
     <%= link_to root_path, id: 'link-accueil' do %>
@@ -8,11 +8,6 @@
       <h2>Si Nema</h2>
     <% end %>
   </header>
-  <div id="userCam">
-    <div id="myVideo"></div>
-    <p id="userCamStart">Allumer son retour</p>
-    <p id="userCamStop">Eteindre son retour </p>
-  </div>
-  <div id='container-main'></div>
-  <div id="videogrid"></div>
+  <div id="main-box"></div>
+  <div id='videogrid'></div>
 </div>
